@@ -4,7 +4,11 @@ const axios = require("axios");
 console.log("REDIS_URI: ", process.env.REDIS_URI);
 
 const redisClient = redis.createClient({
-  url: process.env.REDIS_URI,
+  password: ENV.REDIS_PASSWORD,
+  socket: {
+    host: ENV.REDIS_HOST,
+    port: ENV.REDIS_PORT,
+  },
 });
 
 redisClient.connect().catch(console.error);
