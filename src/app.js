@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // Endpoint for contributors to register their IPs
-app.post("/register-ip", registerIP);
+app.post("/register-url", registerIP);
 
 // Webhook endpoint for WhatsApp messages
 app.post("/webhook", notifyContributors);
